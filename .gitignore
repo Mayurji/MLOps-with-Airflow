@@ -1,0 +1,7 @@
+mlops-airflow/mlops-airflow
+mlops-airflow/airflow_home
+mlops-airflow/models
+mlops-airflow/logs
+mlops-airflow/plugins
+mlops-airflow/scripts
+mlops-airflow/utils

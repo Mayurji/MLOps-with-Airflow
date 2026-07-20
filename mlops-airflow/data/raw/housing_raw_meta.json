@@ -1,0 +1,14 @@
+{
+  "rows": 2000,
+  "columns": [
+    "area_sqft",
+    "bedrooms",
+    "bathrooms",
+    "house_age",
+    "distance_km",
+    "price_usd",
+    "garage_spots"
+  ],
+  "ingested_at": "2026-07-15T10:27:26.332452",
+  "source": "synthetic_generator_v1"
+}

@@ -1,0 +1,14 @@
+{
+  "total_rows": 2000,
+  "null_rates": {
+    "area_sqft": 0.0,
+    "bedrooms": 0.0,
+    "bathrooms": 0.0,
+    "house_age": 0.0,
+    "distance_km": 0.0,
+    "price_usd": 0.0,
+    "garage_spots": 0.043
+  },
+  "issues": [],
+  "passed": true
+}

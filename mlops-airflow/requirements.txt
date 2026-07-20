@@ -1,0 +1,52 @@
+# ============================================================
+# MLOps With Airflow - Requirements
+# Tested on: RTX 2070 SUPER 8GB VRAM | Python 3.10
+# ============================================================
+
+# --- Core Airflow ---
+apache-airflow==2.9.3
+apache-airflow-providers-http==4.11.0
+
+# --- Data Science Core ---
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.0
+matplotlib==3.9.0
+seaborn==0.13.2
+joblib==1.4.2
+
+# --- Deep Learning (PyTorch - CUDA 11.8 compatible with RTX 2070 SUPER) ---
+# Install separately: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+# torch==2.3.1
+# torchvision==0.18.1
+
+# --- MLflow (Experiment Tracking) ---
+mlflow==2.14.3
+boto3==1.34.144  # For S3 artifact store (optional)
+
+# --- Data Validation ---
+great-expectations==0.18.19
+
+# --- Feature Engineering ---
+feature-engine==1.8.1
+
+# --- Model Serialization ---
+onnx==1.16.1
+onnxruntime-gpu==1.18.0  # GPU-accelerated inference
+
+# --- Hyperparameter Tuning ---
+optuna==3.6.1
+
+# --- Model Monitoring ---
+evidently==0.4.30
+
+# --- API Serving ---
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+
+# --- Utilities ---
+python-dotenv==1.0.1
+pyyaml==6.0.1
+requests==2.32.3
+tqdm==4.66.4
+psutil==5.9.8

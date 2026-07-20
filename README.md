@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# MLOps-with-Airflow
-A complete series in understand ML workflow with Airflow as the orchestrator tool.
-=======
 # MLOps with Apache Airflow
 ### A Complete MLOps Tutorial Series — Basic to Advanced
 > Optimized for: **NVIDIA RTX 2070 SUPER (8GB VRAM)** | Python 3.10 | Ubuntu Linux

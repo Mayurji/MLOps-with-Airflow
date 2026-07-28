@@ -31,7 +31,7 @@ from airflow.operators.bash import BashOperator
 log = logging.getLogger(__name__)
 
 # ── Config ─────────────────────────────────────────────────
-PROJECT_ROOT = Path(os.getenv("PROJECT_ROOT", "/home/mayur/Desktop/mlops-airflow"))
+PROJECT_ROOT = Path(os.getenv("PROJECT_ROOT", "/home/mayur/Desktop/MLOps-Airflow-Tutorials/mlops-airflow"))
 DATA_DIR = PROJECT_ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"
 PROCESSED_DIR = DATA_DIR / "processed"

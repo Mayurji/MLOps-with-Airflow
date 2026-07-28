@@ -5,3 +5,7 @@ mlops-airflow/logs
 mlops-airflow/plugins
 mlops-airflow/scripts
 mlops-airflow/utils
+mlops-airflow/mlruns
+mlops-airflow/mlartifacts
+mlruns
+mlartifacts

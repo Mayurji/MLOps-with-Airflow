@@ -41,7 +41,7 @@ from airflow.decorators import task
 log = logging.getLogger(__name__)
 
 # ── Config ──────────────────────────────────────────────────
-PROJECT_ROOT  = Path(os.getenv("PROJECT_ROOT", "/home/mayur/Desktop/mlops-airflow"))
+PROJECT_ROOT  = Path(os.getenv("PROJECT_ROOT", "/home/mayur/Desktop/MLOps-Airflow-Tutorials/mlops-airflow"))
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 MODELS_DIR    = PROJECT_ROOT / "models"
 MLFLOW_URI    = os.getenv("MLFLOW_TRACKING_URI", "http://localhost:5000")
@@ -70,11 +70,7 @@ def _get_data():
     y  = df[TARGET_COL]
     return train_test_split(X, y, test_size=0.2, random_state=42)
 
-
-# ──────────────────────────────────────────────
 # TASKS
-# ──────────────────────────────────────────────
-
 @task(task_id="run_ridge_experiment")
 def run_ridge_experiment():
     """Log Ridge Regression run to MLflow."""

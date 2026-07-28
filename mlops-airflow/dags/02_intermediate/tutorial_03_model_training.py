@@ -37,7 +37,7 @@ from airflow.utils.trigger_rule import TriggerRule
 log = logging.getLogger(__name__)
 
 # ── Config ─────────────────────────────────────────────────
-PROJECT_ROOT  = Path(os.getenv("PROJECT_ROOT", "/home/mayur/Desktop/mlops-airflow"))
+PROJECT_ROOT  = Path(os.getenv("PROJECT_ROOT", "/home/mayur/Desktop/MLOps-Airflow-Tutorials/mlops-airflow"))
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 MODELS_DIR    = PROJECT_ROOT / "models"
 METRICS_DIR   = PROJECT_ROOT / "logs" / "metrics"

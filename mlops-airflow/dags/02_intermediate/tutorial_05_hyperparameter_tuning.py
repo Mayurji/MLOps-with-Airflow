@@ -28,9 +28,8 @@ import optuna
 import mlflow
 import mlflow.sklearn
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import r2_score
 from sklearn.model_selection import cross_val_score, train_test_split
-from sklearn.preprocessing import StandardScaler
 
 from airflow import DAG
 from airflow.decorators import task
@@ -39,7 +38,7 @@ log = logging.getLogger(__name__)
 optuna.logging.set_verbosity(optuna.logging.WARNING)
 
 # ── Config ──────────────────────────────────────────────────
-PROJECT_ROOT  = Path(os.getenv("PROJECT_ROOT", "/home/mayur/Desktop/mlops-airflow"))
+PROJECT_ROOT  = Path(os.getenv("PROJECT_ROOT", "/home/mayur/Desktop/MLOps-Airflow-Tutorials/mlops-airflow"))
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 MODELS_DIR    = PROJECT_ROOT / "models"
 MLFLOW_URI    = os.getenv("MLFLOW_TRACKING_URI", "http://localhost:5000")
@@ -63,10 +62,7 @@ def _load_data():
     y  = df[TARGET_COL]
     return train_test_split(X, y, test_size=0.2, random_state=42)
 
-
-# ──────────────────────────────────────────────
 # OPTUNA OBJECTIVE FUNCTIONS
-# ──────────────────────────────────────────────
 
 def _rf_objective(trial, X_train, y_train):
     """Optuna objective: maximize CV R² for Random Forest."""
@@ -143,7 +139,11 @@ def tune_random_forest():
 
 @task(task_id="tune_gradient_boosting")
 def tune_gradient_boosting():
-    """Run Optuna study for Gradient Boosting and log results to MLflow."""
+    """ Run Optuna study for Gradient Boosting and log results to MLflow.
+        Pruning helps stop unpromising trials early, saving time and resources.
+        MedianPruner prunes a trial if its median across all-time best trials
+        is worse than the current best trial.
+    """
     mlflow.set_tracking_uri(MLFLOW_URI)
     mlflow.set_experiment("housing_hyperparameter_tuning")
 
